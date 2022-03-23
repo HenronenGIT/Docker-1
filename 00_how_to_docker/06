@@ -1,0 +1,4 @@
+apt-get update
+apt-get upgrade
+apt install -y build-essential
+apt install -y git
