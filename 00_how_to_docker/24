@@ -1,2 +1,1 @@
-docker service logs --follow engineering-bay
-# Won't follow certain serivce
+docker service logs --follow engineering-bay | grep -w engineering-bay.2
