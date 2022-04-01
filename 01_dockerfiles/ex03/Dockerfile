@@ -18,8 +18,9 @@ RUN wget https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/scrip
     bash script.deb.sh && \
     apt-get install -y gitlab-ee
 
-ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && gitlab-ctl reconfigure && tail -f /dev/null && \ 
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/CN=localhost' -keyout /etc/gitlab/trusted-certs/localhost.key -out /etc/gitlab/trusted-certs/localhost.crt
+ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && \
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/CN=localhost' -keyout /etc/gitlab/trusted-certs/localhost.key -out /etc/gitlab/trusted-certs/localhost.crt && \ 
+gitlab-ctl reconfigure && tail -f /dev/null
 
 # docker build -t ex03 ./
 # docker run --name ex03 -d -it --rm -p 8080:80 -p 8022:22 -p 8443:443 --privileged -e EXTERNAL_URL="https://localhost" ex03
