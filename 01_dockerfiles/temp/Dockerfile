@@ -16,3 +16,5 @@ ONBUILD RUN rake db:migrate
 # docker build -t rails ./
 # docker run --name rails -d --rm -it rails
 # docker exec -it rails sh
+
+!!!WONT BUILD!!!

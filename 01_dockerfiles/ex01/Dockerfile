@@ -23,7 +23,5 @@ WORKDIR /teamspeak3/teamspeak3-server_linux_amd64/
 CMD sh ts3server_startscript.sh start
 
 # docker build ./ -t ts3
+# docker run -d -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -it -e TS3SERVER_LICENSE=accept ts3
 # We need to add enviroment variable to accept term of services!
-# docker run -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -it -e TS3SERVER_LICENSE=accept ts3
-
-NOT STAYING ON!
