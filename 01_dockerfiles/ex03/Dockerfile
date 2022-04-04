@@ -4,6 +4,7 @@ RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y curl && \
     apt-get install -y perl && \
+    apt-get install -y vim && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata && \
     apt-get install -y ca-certificates && \
     apt-get install -y sudo && \
