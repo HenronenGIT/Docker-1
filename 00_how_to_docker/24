@@ -1,1 +1,2 @@
 docker service logs --follow engineering-bay | grep -w engineering-bay.2
+# CHECK
