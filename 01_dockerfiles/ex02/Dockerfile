@@ -1,22 +1,7 @@
-FROM ruby
+FROM ft-rails:on-build
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt install nodejs -y && \
-    apt install yarn -y && \
-    apt install rails -y && \
-    apt install sqlite3 -y
+EXPOSE 3000
 
-ONBUILD COPY app /opt/app
-ONBUILD WORKDIR /opt/app
+CMD ["rails", "s", "-b", "0.0.0.0", "-p", "3000"]
 
-ONBUILD EXPOSE 3000
-ONBUILD RUN bundle install
-ONBUILD RUN rake db:create
-ONBUILD RUN rake db:migrate
-
-# docker build -t rails:on-build ./
-# docker run --name rails -p 3000:3000 -d --rm -it rails:on-build
-# docker exec -it rails sh
-
-# ONBUILD tag executes all commands when Dockerfile is builded from another Dockerfile
+# docker run --name rails -d --rm -it -p 3000:3000 ft_rails:on-build
