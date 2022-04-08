@@ -1,3 +1,1 @@
-docker swarm init --advertise-addr `ifconfig en0 | grep -w "inet" |awk -F " " '{print $2}'`
-
-# CHECK
+docker swarm init

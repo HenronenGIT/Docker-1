@@ -20,7 +20,7 @@ RUN wget https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/scrip
     echo "external_url \"https://localhost\"" >> /etc/gitlab/gitlab.rb && \
 	echo "nginx['ssl_certificate'] = \"/etc/gitlab/trusted-certs/localhost.crt\"" >> /etc/gitlab/gitlab.rb && \
 	echo "nginx['ssl_certificate_key'] = \"/etc/gitlab/trusted-certs/localhost.key\"" >> /etc/gitlab/gitlab.rb && \
-	echo "gitlab_rails['gitlab_shell_ssh_port'] = 4242" >> /etc/gitlab/gitlab.rb && \
+	echo "gitlab_rails['gitlab_shell_ssh_port'] = 6000" >> /etc/gitlab/gitlab.rb && \
     mkdir -p /var/run/sshd
 
 ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && \
@@ -29,7 +29,7 @@ ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && \
     tail -f /dev/null
 
 # docker build -t ex03 ./
-# docker run --name ex03 -d -it --rm -p 80:80 -p 4242:22 -p 443:443 --privileged ex03
+# docker run --name ex03 -d -it --rm -p 80:80 -p 6000:22 -p 443:443 --privileged ex03
 # docker logs -f <name of container>
 # docker exec -it ex03 sh
 

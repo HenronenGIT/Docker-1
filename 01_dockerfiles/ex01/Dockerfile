@@ -23,5 +23,4 @@ CMD sh ts3server_startscript.sh start && tail -f /dev/null
 
 # docker build ./ -t ts3
 # docker run --name ts3 -d -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -e TS3SERVER_LICENSE=accept ts3
-# We need to add enviroment variable to accept term of services!
-# NOT SAYING ON
+# We need to add enviroment variable "TS3SERVER_LICENSE" to accept term of services!
