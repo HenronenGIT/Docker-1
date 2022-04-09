@@ -33,8 +33,6 @@ ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) && \
 # docker logs -f <name of container>
 # docker exec -it ex03 sh
 
-# http://localhost:8443/
-
 # git config --global http.sslVerify false
 
 # Fixed ssh service not starting
