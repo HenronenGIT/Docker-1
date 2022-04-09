@@ -39,16 +39,16 @@
 
 ### **For each exercise, we will ask you to give the shell command(s) to:**
 
-- [x]  Get the hello-world container from the Docker Hub, where it’s available.
+1. Get the hello-world container from the Docker Hub, where it’s available.
     
     `docker pull hello-world`
     
-- [x]  Launch the hello-world container, and make sure that it prints its welcome mes-
+2. Launch the hello-world container, and make sure that it prints its welcome mes-
 sage, then leaves it.
     
     `docker run hello-world`
     
-- [x]  Launch a nginx container, available on Docker Hub, as a background task. It
+3. Launch a nginx container, available on Docker Hub, as a background task. It
 should be named overlord, be able to restart on its own, and have its 80 port
 attached to the 5000 port of your machine. You can check that your container
 functions properly by visiting http://localhost:5000 on your web browser.
@@ -56,20 +56,20 @@ functions properly by visiting http://localhost:5000 on your web browser.
     `docker run --restart=always -d -p 5000:80 --name overlord nginx`
     
     - Test with [http://localhost:5000/](http://localhost:5000/)
-- [x]  Get the internal IP address of the overlord container without starting its shell and
+4. Get the internal IP address of the overlord container without starting its shell and
 in one command.
-- [x]  Launch a shell from an alpine container, and make sure that you can interact
+5. Launch a shell from an alpine container, and make sure that you can interact
 directly with the container via your terminal, and that the container deletes itself
 once the shell’s execution is done.
-- [x]  From the shell of a debian container, install via the container’s package manager
+6. From the shell of a debian container, install via the container’s package manager
 everything you need to compile C source code and push it onto a git repo (of
 course, make sure before that the package manager and the packages already in the
 container are updated). For this exercise, you should only specify the commands
 to be run directly in the container.
-- [x]  Create a volume named hatchery.
+7. Create a volume named hatchery.
     - `docker volume ls`
-- [x]  List all the Docker volumes created on the machine. Remember. VOLUMES.
-- [x]  Launch a mysql container as a background task. It should be able to restart on its
+8. List all the Docker volumes created on the machine. Remember. VOLUMES.
+9. Launch a mysql container as a background task. It should be able to restart on its
 own in case of error, and the root password of the database should be Kerrigan.
 You will also make sure that the database is stored in the hatchery volume, that
 the container directly creates a database named zerglings, and that the container
@@ -85,9 +85,9 @@ itself is named spawning-pool.
     
     [Mysql - Official Image | Docker Hub](https://hub.docker.com/_/mysql/)
     
-- [x]  Print the environment variables of the spawning-pool container in one command,
+10. Print the environment variables of the spawning-pool container in one command,
 to be sure that you have configured your container properly.
-- [x]  Launch a wordpress container as a background task, just for fun. The container
+11. Launch a wordpress container as a background task, just for fun. The container
 should be named lair, its 80 port should be bound to the 8080 port of the virtual
 machine, and it should be able to use the spawning-pool container as a database
 service. You can try to access lair on your machine via a web browser, with the
@@ -99,7 +99,7 @@ functional Wordpress website in two commands!
     
     `docker inspect spawning-pool | grep name` 
     
-- [x]  12. Launch a phpmyadmin container as a background task. It should be named roach-warden,
+12.  Launch a phpmyadmin container as a background task. It should be named roach-warden,
 its 80 port should be bound to the 8081 port of the virtual machine and it should
 be able to explore the database stored in the spawning-pool container.d
     
@@ -107,19 +107,19 @@ be able to explore the database stored in the spawning-pool container.d
     
     [Docker Hub](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
     
-- [x]  13. Look up the spawning-pool container’s logs in real time without running its shell.
+13. Look up the spawning-pool container’s logs in real time without running its shell.
     
     `docker logs —-follow <container ID>`
     
-- [x]  14. Display all the currently active containers on your machine
+14. Display all the currently active containers on your machine
     
     `docker ps`
     
-- [x]  15. Relaunch the overlord container.
+15. Relaunch the overlord container.
     
     `docker restart <container name>`
     
-- [x]  16. Launch a container name Abathur. It will be a Python container, 2-slim version,
+16. Launch a container name Abathur. It will be a Python container, 2-slim version,
 its /root folder will be bound to a HOME folder on your host, and its 3000 port
 will be bound to the 3000 port of your virtual machine. You will personalize this
 container so that you can use the Flask micro-framework in its latest version. You
@@ -144,8 +144,8 @@ sure you install and configure Docker to work on the VM.
 
 [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
 
-1.   ~~Turn the VM you made into a slave of the local swarm in which your local machine
-is the leader (the command to take control of the VM is not requested).~~
+1.   Turn the VM you made into a slave of the local swarm in which your local machine
+is the leader (the command to take control of the VM is not requested).
     
     `docker swarm init --advertise-addr <MANAGERS_IP>`
     
@@ -164,46 +164,44 @@ is the leader (the command to take control of the VM is not requested).~~
 3. Launch a rabbitmq SERVICE that will be named orbital-command. You should
 define a specific user and password for the RabbitMQ service, they can be whatever
 you want. This service will be on the overmind network.
-    
-    
 4. List all the services of the local swarm.
     1. `docker service ls`
-5. ~~Launch a 42school/engineering-bay service in two replicas and make sure that
+5. Launch a 42school/engineering-bay service in two replicas and make sure that
 the service works properly (see the documentation provided at [hub.docker.com](http://hub.docker.com/)).
-This service will be named engineering-bay and will be on the overmind network.~~
+This service will be named engineering-bay and will be on the overmind network.
     1. 
 
-~~24. Get the real-time logs of one the tasks of the engineering-bay service.~~
+24. Get the real-time logs of one the tasks of the engineering-bay service.
 
 1.  
-1. ..~~. Damn it, a group of zergs is attacking orbital-command, and shutting down
+1. Damn it, a group of zergs is attacking orbital-command, and shutting down
 the engineering-bay service won’t help at all... You must send a troup of Marines
 to eliminate the intruders. Launch a 42school/marine-squad in two replicas,
 and make sure that the service works properly (see the documentation provided
 at [hub.docker.com](http://hub.docker.com/)). This service will be named... marines and will be on the
-overmind network.~~
+overmind network.
     1. 
-2. ~~Display all the tasks of the marines service.~~
+2. Display all the tasks of the marines service.
     1. `docker service ps marines`
-3. ~~Increase the number of copies of the marines service up to twenty, because there’s
+3. Increase the number of copies of the marines service up to twenty, because there’s
 never enough Marines to eliminate Zergs. (Remember to take a look at the tasks
-and logs of the service, you’ll see, it’s fun.)~~
+and logs of the service, you’ll see, it’s fun.)
     1. `docker service scale -d marines=20`
     
     [docker service scale](https://docs.docker.com/engine/reference/commandline/service_scale/)
     
-4. ~~Force quit and delete all the services on the local swarm, in one command.~~
+4. Force quit and delete all the services on the local swarm, in one command.
     1. `docker service rm $(docker service ls -q)`
-5. ~~Force quit and delete all the containers (whatever their status), in one command.~~
+5. Force quit and delete all the containers (whatever their status), in one command.
     1. `docker container rm --force $(docker container ls --all -q)`
-6. ~~Delete all the container images stored on your local machine machine, in one command as well.~~
+6. Delete all the container images stored on your local machine machine, in one command as well.
     1. `docker image rm $(docker images --all -q`)
 
 # Dockerfiles
 
 ### ex00
 
-- [x]  From an alpine image you’ll add to your container your favorite text editor, vim or
+1. From an alpine image you’ll add to your container your favorite text editor, vim or
 emacs, that will launch along with your container.
 
 ```docker
@@ -229,7 +227,7 @@ CMD vim
 
 ### ex02
 
-- [x]  You are going to create your first Dockerfile to containerize Rails applications. That’s
+1. You are going to create your first Dockerfile to containerize Rails applications. That’s
 a special configuration: this particular Dockerfile will be generic, and called in another
 Dockerfile, that will look something like this:
 
@@ -239,7 +237,7 @@ EXPOSE 3000
 CMD ["rails", "s", "-b", "0.0.0.0", "-p", "3000"]
 ```
 
-- [ ]  Your generic container should install, via a ruby container, all the necessary dependencies and gems, then copy your rails application in the /opt/app folder of your
+1. Your generic container should install, via a ruby container, all the necessary dependencies and gems, then copy your rails application in the /opt/app folder of your
 container. Docker has to install the approtiate gems when it builds, but also launch
 the migrations and the db population for your application. The child Dockerfile should
 launch the rails server (see example below). If you don’t know what commands to use,
@@ -266,8 +264,6 @@ it’s high time to look at the Ruby on Rails documentation.
 
 `bundle-install` - Install the dependencies specified in your Gemfile
 
-### 
-
 ### ONBUILD <instructions>
 
 > *This is useful if you are building an image which will be used as a base to build other images, for example an application build environment or a daemon which may be customized with user-specific configuration.*
@@ -291,7 +287,6 @@ deemed valid if you can access the web client, create users and interact via GIT
 container (HTTPS and SSH). Obviously, you are not allowed to use the official container
 from Gitlab, it would be a shame...
 > 
-
 - Because the hostname in our example is `gitlab.example.com`, Omnibus GitLab will look for private key and public certificate files called `/etc/gitlab/ssl/gitlab.example.com.key`
  and `/etc/gitlab/ssl/gitlab.example.com.crt`, respectively.
 - **If the `certificate.key` file is password protected**, NGINX will not ask for the password when you reconfigure GitLab. In that case, Omnibus GitLab will fail silently with no error messages.
@@ -323,11 +318,6 @@ from Gitlab, it would be a shame...
 
 ### You need to learn Docker right now
 
-[https://youtu.be/eGz9DS-aIeY?t=714](https://youtu.be/eGz9DS-aIeY?t=714)
+[you need to learn Docker RIGHT NOW!! // Docker Containers 101](https://youtu.be/eGz9DS-aIeY)
 
 ![Untitled](Docker-1%20-%2090ab6/Untitled%201.png)
-
-# Introduction
-
-- Docker makes it easier to share your - lets say an App you have made
-- App splitting to microservices.
