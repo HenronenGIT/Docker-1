@@ -320,4 +320,5 @@ from Gitlab, it would be a shame...
 
 [you need to learn Docker RIGHT NOW!! // Docker Containers 101](https://youtu.be/eGz9DS-aIeY)
 
-![Untitled](Docker-1%20-%2090ab6/Untitled%201.png)
+<img width="1347" alt="Untitled 1" src="https://user-images.githubusercontent.com/69038136/162577630-45ae4b79-9555-40b0-9971-8ab6ba1c1d39.png">
+
