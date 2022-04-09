@@ -3,8 +3,6 @@
 > *Virtual machine virtualizes hardware, Docker virtualizes Operating system.*
 > 
 
-!! - 
-
 # PDF
 
 [docker-1.en.pdf](Docker-1%20-%2090ab6/docker-1.en.pdf)
