@@ -6,6 +6,13 @@
 
 > *Virtual machine virtualizes hardware, Docker virtualizes Operating system.*
 
+## Description
+
+In Docker project first you learn to use basic commands to use actual Docker software.<br>
+After that we start to handle different kind of containers and combining those together.<br>
+Last part of the project is make your own **Dockerfiles** and in example launch your own local [Gitlab](https://about.gitlab.com/) server.
+
+
 # [PDF](./docker-1.pdf)
 
 
